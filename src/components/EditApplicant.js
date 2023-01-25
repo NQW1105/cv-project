@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
-class EditUser extends Component {
+class EditApplicant extends Component {
   render() {
     // console.log(this.props);
-    const { name, title, phone, email, location } = this.props.userInput;
+    const {
+      nameUpdate,
+      titleUpdate,
+      phoneUpdate,
+      emailUpdate,
+      locationUpdate,
+    } = this.props;
+    const { name, title, phone, email, location } = this.props.applicantDetails;
 
     return (
       <form className="flex justify-between items-center bg-black text-neutral-50 py-5 px-10">
@@ -12,13 +19,15 @@ class EditUser extends Component {
             type="text"
             className="text-6xl font-semibold bg-black text-neutral-50 w-full"
             autoFocus
-            value={name}
+            defaultValue={name}
+            onChange={nameUpdate}
           ></input>
           <div className="flex gap-2">
             <input
               type="text"
               className="text-3xl pt-2 bg-black text-neutral-50 w-full"
-              value={title}
+              defaultValue={title}
+              onChange={titleUpdate}
             ></input>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +56,8 @@ class EditUser extends Component {
             <input
               type="text"
               className="text-base font-semibold bg-black text-neutral-50"
-              value={phone}
+              defaultValue={phone}
+              onChange={phoneUpdate}
             ></input>
           </div>
           <div className="flex items-center gap-2 fill-neutral-50">
@@ -62,7 +72,8 @@ class EditUser extends Component {
             <input
               type="text"
               className="text-base font-semibold bg-black text-neutral-50"
-              value={email}
+              defaultValue={email}
+              onChange={emailUpdate}
             ></input>
           </div>
           <div className="flex items-center gap-2 fill-neutral-50">
@@ -77,7 +88,8 @@ class EditUser extends Component {
             <input
               type="text"
               className="text-base font-semibold bg-black text-neutral-50"
-              value={location}
+              defaultValue={location}
+              onChange={locationUpdate}
             ></input>
           </div>
         </div>
@@ -86,4 +98,4 @@ class EditUser extends Component {
   }
 }
 
-export default EditUser;
+export default EditApplicant;

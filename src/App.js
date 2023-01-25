@@ -60,7 +60,8 @@ class App extends Component {
     const { editUser, userDetails } = this.state;
     return (
       <div className="md:w-4/5 md:h-screen md:border-2 md:border-black my-0 mx-auto ">
-        <User edit={editUser} input={userDetails} />
+        {/* <User edit={editUser} input={userDetails} /> */}
+        <User />
         <Experience />
         <Education />
       </div>
